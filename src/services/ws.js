@@ -1,27 +1,35 @@
 function noop() {}
 //Websocket Wrapper API with reconnection option
-export default function (url, opts) {
+export default function(url, opts) {
   opts = opts || {};
 
-  let k, ws, num, $={}, self=this;
-  let ms=opts.timeout || 1e3, max=opts.maxAttempts || Infinity;
+  let k,
+    ws,
+    num,
+    $ = {},
+    self = this;
+  let ms = opts.timeout || 1e3,
+    max = opts.maxAttempts || Infinity;
 
   $.onmessage = opts.onmessage || noop;
 
   $.onclose = e => {
     e.endpoint = url;
-    (e.code !== 1e3 && e.code !== 1005) && self.reconnect(e);
+    e.code !== 1e3 && e.code !== 1005 && self.reconnect(e);
     (opts.onclose || noop)(e);
   };
 
   $.onerror = e => {
     e.endpoint = url;
-    (e && e.code==='ECONNREFUSED') ? self.reconnect(e) : (opts.onerror || noop)(e);
+    e && e.code === "ECONNREFUSED"
+      ? self.reconnect(e)
+      : (opts.onerror || noop)(e);
   };
 
   $.onopen = e => {
     e.endpoint = url;
-    num=0; (opts.onopen || noop)(e);
+    num = 0;
+    (opts.onopen || noop)(e);
   };
 
   self.open = () => {
@@ -30,10 +38,12 @@ export default function (url, opts) {
   };
 
   self.reconnect = e => {
-    (num++ < max) ? setTimeout(() => {
-      (opts.onreconnect || noop)(e);
-      self.open();
-    }, ms) : (opts.onmaximum || noop)(e);
+    num++ < max
+      ? setTimeout(() => {
+          (opts.onreconnect || noop)(e);
+          self.open();
+        }, ms)
+      : (opts.onmaximum || noop)(e);
   };
 
   self.close = (x, y) => {
