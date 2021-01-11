@@ -1,6 +1,6 @@
 <template>
-  <div class="board">
-    <div class="card-block" v-for="(value, index) in currencies" :key="index">
+  <div class="cards">
+    <div class="card" v-for="(value, index) in currencies" :key="index">
       <CurrencyCard
         :ticker="tickers[value.symbol] || {}"
         :info="value"
@@ -21,3 +21,13 @@ export default {
   }
 };
 </script>
+<style>
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+
+  .card {
+    flex: 1 1 400px;
+  }
+}
+</style>

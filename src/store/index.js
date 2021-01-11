@@ -2,7 +2,7 @@
 
 import Vue from "vue";
 import Vuex from "vuex";
-import defaultPair from "@/assets/defaultpair.json";
+import defaultPair from "@/assets/stubs/defaultpair.json";
 
 Vue.use(Vuex);
 

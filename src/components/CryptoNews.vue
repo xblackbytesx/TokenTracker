@@ -23,7 +23,7 @@
   </section>
 </template>
 <script>
-import timeago from "timeago.js";
+import * as timeago from "timeago.js";
 export default {
   created() {
     this.getNews();

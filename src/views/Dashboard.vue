@@ -27,7 +27,7 @@
 </template>
 <script>
 import vSelect from "vue-select";
-import coins from "@/assets/group.json";
+import coins from "@/assets/stubs/group.json";
 import CryptoBoard from "@/views/CryptoBoard.vue";
 import { isEmpty } from "../util/Utility";
 import { subscribeSymbol } from "../services/binance";

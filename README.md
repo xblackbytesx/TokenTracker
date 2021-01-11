@@ -15,6 +15,7 @@ A Cryptocurrency Dashboard build with Vue JS, PWA enabled, Binance Websocket API
 - [Cryptocompare News Api](https://min-api.cryptocompare.com/)
 - [Custom sparkline chart](https://github.com/JayeshLab/vue-crypto-dashboard/blob/master/src/components/Sparkline.vue)
 - [Custom Binance Websocket Api](https://github.com/JayeshLab/vue-crypto-dashboard/blob/master/src/services/api.js)
+- [Docker](https://docker.com)
 
 
 ## Prerequisites:
@@ -46,3 +47,15 @@ yarn run lint
 ```
 yarn run test:unit
 ```
+
+## Docker
+This fork has added basic Docker support which is still work in progress.
+
+```
+docker build -t tokentracker .
+```
+```
+docker run -d -P --name tokentracker-app -p 3000:80 tokentracker
+```
+
+After running these commands you should be able to visit the app by navigation to `http://localhost:3000`.

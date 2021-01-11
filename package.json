@@ -13,7 +13,7 @@
     "amcharts3": "^3.21.15",
     "amstock3": "^3.21.15",
     "core-js": "^3.6.5",
-    "postcss-nested": "^5.0.3",
+    "postcss-nested": "^4.2.3",
     "register-service-worker": "^1.7.1",
     "timeago.js": "^4.0.2",
     "vue": "^2.6.11",
@@ -48,5 +48,11 @@
       "vue-cli-service lint",
       "git add"
     ]
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "postcss-nested":{}
+    }
   }
 }
