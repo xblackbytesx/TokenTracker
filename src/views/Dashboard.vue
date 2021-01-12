@@ -1,7 +1,7 @@
 <template>
   <div class="content-box">
     <div class="menu-bar">
-      <v-select
+      <!-- <v-select
         id="base"
         :options="currencyList[quote]"
         :clearable="false"
@@ -20,13 +20,13 @@
       ></v-select>
       <button class="add-btn" @click="addCoinPair">
         <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
-      </button>
+      </button> -->
     </div>
     <CryptoBoard></CryptoBoard>
   </div>
 </template>
 <script>
-import vSelect from "vue-select";
+// import vSelect from "vue-select";
 import coins from "@/assets/stubs/group.json";
 import CryptoBoard from "@/views/CryptoBoard.vue";
 import { isEmpty } from "../util/Utility";
@@ -53,7 +53,7 @@ export default {
     ...mapState(["currencies"])
   },
   components: {
-    vSelect,
+    // vSelect,
     CryptoBoard
   },
   methods: {

@@ -25,9 +25,13 @@ export default {
 .cards {
   display: flex;
   flex-flow: row wrap;
+  margin: var(--gutter-half);
 
   .card {
     flex: 1 1 400px;
+    margin: var(--gutter-half);
+    border: 1px solid var(--border-z1);
+    background-color: var(--bgcolor-z1);
   }
 }
 </style>

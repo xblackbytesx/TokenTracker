@@ -1,25 +1,17 @@
 <template>
-  <div class="coin-box" @dblclick.stop="openDetails">
-    <div class="row no-gutters coin-info">
-      <div class="col-7">
-        <div class="font-weight-bold">{{ info.name }}</div>
-        <div class="row no-gutters mt-1">
-          <div class="box-icon">
-            <span :style="{ backgroundImage: 'url(' + iconbase + ')' }"></span>
-          </div>
-          <div class="col text-left">
-            <div>
-              <b>{{ info.base }}</b
-              >/{{ info.quote }}
-            </div>
-            <div class="coin-price" v-if="ticker.price">
-              {{ ticker.price || ""
-              }}<span
-                style="font-size: x-small; font-weight: 700; padding-left: 3px;"
-                >{{ info.quote }}</span
-              >
-            </div>
-          </div>
+  <div class="coin-ticker" @dblclick.stop="openDetails">
+    <div class="coin-ticker__info">
+      <div>{{ info.name }}</div>
+      <div>
+        <div class="coin-ticker__icon">
+          <span :style="{ backgroundImage: 'url(' + iconbase + ')' }"></span>
+        </div>
+        <div class="coin-ticker__pair">
+          <b>{{ info.base }}</b
+          >/{{ info.quote }}
+        </div>
+        <div class="coin-ticker__price" v-if="ticker.price">
+          {{ ticker.price || "" }} <span>{{ info.quote }}</span>
         </div>
       </div>
       <div
@@ -51,7 +43,7 @@
         </div>
       </div>
     </div>
-    <div class="sparkline-chart" v-if="ticker.price">
+    <div class="coin-ticker__chart" v-if="ticker.price">
       <Sparkline :cdata="ticker.price" :width="380" :height="90"></Sparkline>
     </div>
   </div>
@@ -95,3 +87,20 @@ export default {
   }
 };
 </script>
+<style>
+.coin-ticker {
+  position: relative;
+  min-height: 250px;
+  overflow: hidden;
+
+  &__info {
+    padding: 16px;
+  }
+
+  &__chart {
+    position: absolute;
+    bottom: -4px;
+    width: 103%;
+  }
+}
+</style>

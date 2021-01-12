@@ -1,0 +1,25 @@
+:root {
+    /* Palette */
+    --color-white: hsl(0,0%,100%);
+
+    /* Declarations */
+    --bgcolor-z0: hsl(0,0%,97%);
+    --bgcolor-z1: hsl(0,0%,100%);
+    --font-color: hsl(0, 0%, 8%);
+    --border-z1: hsl(0, 0%, 87%);
+
+    /* layout */
+    --gutter: 16px;
+    --gutter-half: 8px;
+    --gutter-double: 32px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Declarations */
+        --bgcolor-z0: hsl(0, 0%, 8%);
+        --bgcolor-z1:hsl(0, 0%, 10%);
+        --font-color: hsl(0,0%,97%);
+        --border-z1: hsl(0, 0%, 14%);
+    }
+}
