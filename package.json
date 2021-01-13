@@ -13,6 +13,7 @@
     "amcharts3": "^3.21.15",
     "amstock3": "^3.21.15",
     "core-js": "^3.6.5",
+    "normalize.css": "^8.0.1",
     "postcss-nested": "^4.2.3",
     "register-service-worker": "^1.7.1",
     "timeago.js": "^4.0.2",
@@ -52,7 +53,7 @@
   "postcss": {
     "plugins": {
       "autoprefixer": {},
-      "postcss-nested":{}
+      "postcss-nested": {}
     }
   }
 }

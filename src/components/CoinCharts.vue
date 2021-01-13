@@ -556,3 +556,13 @@ export default {
   }
 };
 </script>
+<style>
+.info-card {
+  background: var(--bgcolor-z1);
+  border-radius: 8px;
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+</style>

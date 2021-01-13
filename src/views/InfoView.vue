@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="content-box">
     <div class="row flex-xl-nowrap">
       <div class="col">
         <div class="row">

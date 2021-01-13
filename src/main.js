@@ -4,6 +4,7 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import clickOutside from "./directives/click-ouside";
+import "normalize.css";
 import "./assets/css/app.css";
 
 Vue.config.productionTip = false;
